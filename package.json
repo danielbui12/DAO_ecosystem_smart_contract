@@ -1,0 +1,35 @@
+{
+  "name": "dao-project",
+  "version": "1.0.0",
+  "description": "dao project",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build-contracts": "sol-merger \"./contracts/DAO/WinDAO.sol\" ./build/merged/DAO/WinDAO.sol",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "contract:sync": "rm -rf ./client/src/contracts && cp -R ./build/contracts ./client/src/contracts",
+    "verify": "node ./scripts/verify.js"
+  },
+  "author": "meomeocoj",
+  "license": "ISC",
+  "dependencies": {
+    "@chainlink/contracts": "^0.4.0",
+    "@openzeppelin/contracts": "^4.5.0",
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "@truffle/hdwallet-provider": "^2.0.4",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "dotenv": "^16.0.0",
+    "truffle": "^5.5.6",
+    "truffle-contract-size": "^2.0.1",
+    "truffle-flattener": "^1.6.0",
+    "truffle-plugin-solhint": "^0.0.6"
+  },
+  "devDependencies": {
+    "sol-merger": "^4.1.1",
+    "truffle": "^5.5.6",
+    "truffle-plugin-verify": "^0.5.25"
+  }
+}
